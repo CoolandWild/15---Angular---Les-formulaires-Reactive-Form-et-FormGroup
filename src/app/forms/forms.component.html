@@ -1,0 +1,51 @@
+<div class="formulaire">
+  <p>Veuillez renseigner les champs ci-dessous , Merci!</p>
+</div>
+<div>
+  <div class="champs">
+    <label>
+      Prénom :
+        <input type="text" [formControl]="firstName">
+    </label>
+    <label>
+      Nom :
+        <input type="text" [formControl]="lastName">
+    </label>
+    <label>
+      Email :
+        <input type="text" [formControl]="email">
+    </label>
+    <label>
+      Mot de passe :
+        <input type="text" [formControl]="passWord">
+    </label>
+    <label>
+      rue :
+        <input type="text" [formControl]="street">
+    </label>
+    <label>
+      Code postal :
+        <input type="text" [formControl]="zipCode">
+    </label>
+    <label>
+      Ville:
+        <input type="text" [formControl]="city">
+    </label>
+    <label>
+      Pays :
+        <input type="text" [formControl]="country">
+    </label>
+    <button (click)="addnewUser()" >Inscription</button></div>
+    <div class="UserElements">
+      <div >
+        <p> Nom : {{ user.firstName }}</p>
+        <p>prenom : {{ user.lastName }}</p>
+        <p>EMail : {{ user.email }}</p>
+        <p>Mot de passe : {{ user.passWord }}</p>
+        <p>Rue : {{ user.street }}</p>
+        <p> Code Postal : {{ user.zipCode }}</p>
+        <p>Ville : {{ user.city }}</p>
+        <p>Pays : {{ user.country }}</p>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: cadetblue;
+  width: 100vw;
+  height: 20vh;
+}
+.champs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(84, 24, 180);
+  width: 100vw;
+  height: 40vh;
+}
+.UserElements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(243, 152, 187);
+  width: 100vw;
+  height: 40vh;
+}
