@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { User } from '../User';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { userForm } from "../userForm";
 import { UserService } from '../user.service';
 
 
@@ -11,31 +11,36 @@ import { UserService } from '../user.service';
   styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent implements OnInit {
-    user :User;
-    firstName = new FormControl();
-    lastName  = new FormControl();
-    email = new FormControl();
-    passWord = new FormControl();
-    street = new FormControl();
-    zipCode = new FormControl();
-    city = new FormControl();
-    country = new FormControl();
+    user :userForm;
+    userForm = this.fb.group ({
+    firstName : new FormControl(''),
+    lastName  : new FormControl(''),
+    email : new FormControl(''),
+    passWord : new FormControl(''),
+    street : new FormControl(''),
+    zipCode : new FormControl(''),
+    city : new FormControl(''),
+    country : new FormControl('')
+  })
+  firstName: any;
 
-    constructor(private userservice: UserService) {}
+    constructor(private userservice: UserService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
   }
-
+  onSubmit() {
+    console.log(this.userForm.value);
+  }
   addnewUser () {
-    this.user = new User()
-    this.user.firstName= this.firstName.value;
-    this.user.lastName =this.firstName.value;
-    this.user.email=this.email.value;
-    this.user.passWord=this.passWord.value;
-    this.user.street=this.street.value;
-    this.user.zipCode=this.zipCode.value;
-    this.user.city=this.city.value;
-    this.user.country=this.country.value;
+    this.user = new userForm();
+    this.user.firstName= this.user.firstName;
+    this.user.lastName =this.user.lastName;
+    this.user.email=this.user.email;
+    this.user.passWord=this.user.passWord;
+    this.user.street=this.user.street;
+    this.user.zipCode=this.user.zipCode;
+    this.user.city=this.user.city;
+    this.user.country=this.user.country;
   }
 
 }

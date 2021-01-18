@@ -1,7 +1,4 @@
-
-
-
-export class User {
+export class userForm {
 
     firstName :string ;
     lastName: string ;

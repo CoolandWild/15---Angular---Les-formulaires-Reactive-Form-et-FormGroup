@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { User } from './User';
+import { userForm } from './User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-userservice : User []= [];
+userservice : userForm []= [];
   constructor() { }
 
-  getuserservice():User[] {
+  getuserservice():userForm[] {
     return this.userservice;
   }
-  addUsers (userModel: User){
+  addUsers (userModel: userForm){
     this.userservice.push(userModel);
 
   }
